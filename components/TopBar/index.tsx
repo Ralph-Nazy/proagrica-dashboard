@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
-import { RiMenuFill } from "react-icons/ri";
+import { RiFullscreenLine, RiMenuFill, RiNotification4Line} from "react-icons/ri";
 import { useStateContext } from "../../contexts/ContextProvider";
+import Link from "next/link";
+import Image from "next/image";
 
 const TopBar: React.FC<{}> = () => {
   const { activeMenu, setActiveMenu, setScreenSize, screenSize } =
@@ -33,7 +35,39 @@ const TopBar: React.FC<{}> = () => {
       <div onClick={handleActiveMenu} className="cursor-pointer">
         <RiMenuFill />
       </div>
-      <div className="flex"></div>
+      <div className="flex">
+      <nav className="flex items-center justify-between px-1"> 
+      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <li className="inline-flex items-center">
+          <Link
+            href="/"
+            className="inline-flex items-center text-sm font-[400] text-gray-600 hover:text-[#008184]"
+          >
+            <RiFullscreenLine className="mr-2.5" /> 
+          </Link>
+        </li>
+        <li className="inline-flex items-center">
+          <Link
+            href="/"
+            className="inline-flex items-center text-sm font-[400] text-gray-600 hover:text-[#008184]"
+          >
+            <RiNotification4Line className="mr-2.5" /> 
+          </Link>
+        </li>
+        <li>
+          <div className="flex items-center">
+          <Image
+            className="rounded-full"
+            src="/images/userImage.jpeg"
+            alt="User Name"
+            width="25"
+            height="25"
+          />
+          </div>
+        </li>
+      </ol>
+    </nav>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useStateContext } from "../../contexts/ContextProvider";
 import Image from "next/image";
-import { Loader } from "../../components";
+import { BreadCrumb, Loader } from "../../components";
 
 const UserDetails: React.FC<{}> = () => {
   //get user details data from the content API
@@ -26,6 +26,7 @@ const UserDetails: React.FC<{}> = () => {
         <Loader />
       ) : (
         <div className="container mx-auto">
+          <BreadCrumb title={`${userData.firstName} ${userData.lastName}`}/>
           <div className="">
             <div className="grid lg:grid-cols-12 gap-4">
               <div className="lg:col-span-4 bg-white border-[1px] border-[#e5e7eb] shadow-md h-fit p-5 rounded-[6px] ">

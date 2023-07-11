@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
-import { Users, Loader, Alert, UserForm } from "../../components";
+import { Users, Loader, Alert, UserForm, BreadCrumb } from "../../components";
 import { userList } from "../../services";
 import { UserLisResponseData } from "../../types";
 import { useStateContext } from "../../contexts/ContextProvider";
@@ -105,6 +105,7 @@ const UserList: React.FC<{}> = () => {
       {loading && <Loader />}
 
       <div className="container mx-auto">
+      <BreadCrumb title="Employees" />
         <div className="bg-white border-[1px] border-[#e5e7eb]  px-10 py-10 rounded-[6px]  shadow-md p-5 ">
           <div className="grid grid-cols-1 gap-4">
             <button

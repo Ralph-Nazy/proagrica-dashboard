@@ -6,6 +6,7 @@ import {
   ProjectOverview,
   Loader,
   DashboardList,
+  BreadCrumb,
 } from "../components";
 import React, { useEffect, useState } from "react";
 import { saleStarts, saleChart, pieChart, barChart } from "../data";
@@ -30,6 +31,7 @@ const Dashboard: React.FC<{}> = () => {
         <Loader />
       ) : (
         <div className="container mx-auto">
+          <BreadCrumb title="Dashboard" />
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             <StatsCard list={saleStarts} />
           </div>
